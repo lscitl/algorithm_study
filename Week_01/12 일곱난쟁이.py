@@ -11,11 +11,25 @@
 # 출력
 # 일곱 난쟁이의 키를 오름차순으로 출력한다. 일곱 난쟁이를 찾을 수 없는 경우는 없다.
 
-from copy import deepcopy
+import sys
 
-a = [1, 2, 3]
-b = deepcopy(a)
-b = a
-b = a[:]
-a[0] = 2
-print(b[0])
+
+def function():
+    a = []
+    for i in range(9):
+        a.append(int(sys.stdin.readline()))
+
+    a.sort()
+    b = sum(a)
+
+    for i in range(8):
+        for j in range(i + 1, 9):
+            if b - (a[i] + a[j]) == 100:
+                for k in range(9):
+                    if k != i and k != j:
+                        print(a[k])
+                return
+
+
+if __name__ == "__main__":
+    function()
