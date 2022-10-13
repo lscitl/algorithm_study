@@ -21,4 +21,3 @@ for i in a:
         print(i, end=" ")
     else:
         print(i)
-
